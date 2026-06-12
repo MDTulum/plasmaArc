@@ -1,0 +1,23 @@
+{
+  "name": "H+",
+  "stoichiometry": {
+    "H": 1
+  },
+  "molar_mass": 0.00100727646677,
+  "charge_number": 1,
+  "ionisation_energy": 8.718724806901199e-18,
+  "energy_levels": [
+    [
+      0.0,
+      0.0
+    ]
+  ],
+  "polarisability": 1e-41,
+  "multiplicity": 1,
+  "effective_electrons": null,
+  "electron_cross_section": null,
+  "emission_lines": [],
+  "sources": [
+    "NIST Chemistry WebBook, https://webbook.nist.gov/chemistry/"
+  ]
+}

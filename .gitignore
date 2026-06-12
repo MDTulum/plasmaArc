@@ -1,3 +1,5 @@
 linux64GccDPInt32Opt
 lnInclude
+__pycache__/
+*.pyc
 

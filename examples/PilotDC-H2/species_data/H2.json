@@ -1,0 +1,23 @@
+{
+  "name": "H2",
+  "stoichiometry": {
+    "H": 2
+  },
+  "molar_mass": 0.00201565006414,
+  "charge_number": 0,
+  "ionisation_energy": 2.4715064603719617e-18,
+  "dissociation_energy": 7.17459503235102e-19,
+  "sigma_s": 2,
+  "g0": 1,
+  "w_e": 8.742771648111346e-20,
+  "b_e": 1.2088118974508377e-21,
+  "polarisability": 8.02e-31,
+  "multiplicity": 1,
+  "effective_electrons": 2.0,
+  "electron_cross_section": 1e-19,
+  "emission_lines": [],
+  "sources": [
+    "NIST Chemistry WebBook, https://webbook.nist.gov/chemistry/",
+    "NIST CCCBDB, https://cccbdb.nist.gov/"
+  ]
+}
