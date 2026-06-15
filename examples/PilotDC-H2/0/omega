@@ -1,0 +1,45 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      omega;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 -1 0 0 0 0];
+
+internalField   uniform 100;
+
+boundaryField
+{
+    anode
+    {
+        type            omegaWallFunction;
+        value           uniform 100;
+    }
+    cathode
+    {
+        type            omegaWallFunction;
+        value           uniform 100;
+    }
+    electrodewalls
+    {
+        type            omegaWallFunction;
+        value           uniform 100;
+    }
+    sides
+    {
+        type            omegaWallFunction;
+        value           uniform 100;
+    }
+    top
+    {
+        type            inletOutlet;
+        inletValue      uniform 100;
+        value           uniform 100;
+    }
+}
+
+// ************************************************************************* //

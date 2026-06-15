@@ -1,5 +1,40 @@
-linux64GccDPInt32Opt
-lnInclude
+# ---- OpenFOAM parallel decomposition ----
+processor*/
+
+# ---- OpenFOAM time-step result dirs (keep 0/ and 0.org/) ----
+[1-9]*/
+0.[0-9]*/
+
+# ---- Log files ----
+log.*
+*.log
+foam.log
+
+# ---- Postprocessing results ----
+postProcessing/
+
+# ---- Parametric sweep results ----
+sweep/I_*/
+sweep/voltage_summary.csv
+sweep.log
+
+# ---- OpenFOAM wmake build artifacts ----
+**/lnInclude/
+**/Make/linux*/
+*.dep
+*.o
+*.so
+
+# ---- VTK outputs ----
+VTK/
+*.vtk
+*.vtp
+*.vtu
+
+# ---- Python cache ----
 __pycache__/
 *.pyc
 
+# ---- OS files ----
+.DS_Store
+Thumbs.db

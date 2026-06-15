@@ -9,13 +9,36 @@ FoamFile
 {
     version  2.0;
     format   ascii;
-    class    dictionary;
-    location "system";
-    object   decomposeParDict;
+    class    volScalarField;
+    location "0";
+    object   ek;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 64;
-method scotch;
+dimensions [-1 -3 3 0 0 2 0];
+internalField uniform 1000;
+boundaryField
+{
+    cathode
+    {
+        type zeroGradient;
+    }
+    anode
+    {
+        type zeroGradient;
+    }
+    electrodewalls
+    {
+        type zeroGradient;
+    }
+    top
+    {
+        type zeroGradient;
+    }
+    sides
+    {
+        type zeroGradient;
+    }
+}
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

@@ -1,0 +1,19 @@
+#!/bin/bash
+# Launch plasmaArc on CPUs 64-127 (second HT siblings), leaving 0-63 for Fluent.
+# 32 MPI ranks, --bind-to none lets taskset control placement instead of OpenMPI.
+
+source /usr/lib/openfoam/openfoam2312/etc/bashrc
+
+cd "$(dirname "$0")" || exit 1
+
+echo "Launching plasmaArc (32 ranks, pinned to CPUs 64-127) at $(date)"
+echo "Case: $(pwd)"
+echo "Solver: $(grep '^application' system/controlDict | awk '{print $2}' | tr -d ';')"
+
+taskset -c 64-127 mpirun \
+    -np 32 \
+    --bind-to none \
+    plasmaArc -parallel \
+    2>&1 | tee log.plasmaArc
+
+echo "plasmaArc finished at $(date) with exit code: ${PIPESTATUS[0]}"

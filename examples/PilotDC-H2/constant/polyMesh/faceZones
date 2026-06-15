@@ -1,43 +1,21 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  5                                     |
-|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|  \\    /   O peration     | Version:  2312                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    location    "constant";
-    object      fvOptions;
+    arch        "LSB;label=32;scalar=64";
+    class       regIOobject;
+    location    "constant/polyMesh";
+    object      faceZones;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-radiation
-{
-    type            radiation;
-    libs
-    (
-        "libradiationModels.so"
-        "libgreyPlasmaAbsorptionEmission.so"
-    );
-}
-
-gravity
-{
-    type            vectorSemiImplicitSource;
-    volumeMode      specific;
-    selectionMode   all;
-    sources
-    {
-        U
-        {
-            explicit    (0 0 -9.81);
-            implicit    0;
-        }
-    }
-}
+0()
 
 // ************************************************************************* //

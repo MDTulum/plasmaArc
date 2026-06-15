@@ -9,13 +9,37 @@ FoamFile
 {
     version  2.0;
     format   ascii;
-    class    dictionary;
-    location "system";
-    object   decomposeParDict;
+    class    volVectorField;
+    location "0";
+    object   U;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 64;
-method scotch;
+dimensions [0 1 -1 0 0 0 0];
+internalField uniform (0.1 0.1 0);
+boundaryField
+{
+    cathode
+    {
+        type noSlip;
+    }
+    anode
+    {
+        type noSlip;
+    }
+    electrodewalls
+    {
+        type noSlip;
+    }
+    top
+    {
+        type pressureInletOutletVelocity;
+        value $internalField;
+    }
+    sides
+    {
+        type noSlip;
+    }
+}
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

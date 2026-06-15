@@ -16,10 +16,10 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 application plasmaArc;
-startFrom latestTime;
+startFrom startTime;
 startTime 0;
 stopAt endTime;
-endTime 0.025;
+endTime 0.05;
 deltaT 1e-08;
 writeControl adjustableRunTime;
 writeInterval 0.001;
@@ -31,8 +31,8 @@ timeFormat general;
 timePrecision 8;
 runTimeModifiable true;
 adjustTimeStep on;
-maxCo 0.5;
-maxAlphaCo 0.5;
+maxCo 0.1;
+maxAlphaCo 0.1;
 minDeltaT 0;
 maxDeltaT 1;
 libs

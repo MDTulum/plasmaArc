@@ -49,7 +49,7 @@ solvers
         relTol          0;
     }
 
-    "(U|h|k)"
+    "(U|h|k|omega)"
     {
         solver          smoothSolver;
         smoother        symGaussSeidel;
@@ -57,7 +57,7 @@ solvers
         relTol          0.1;
     }
 
-    "(U|h|k)Final"
+    "(U|h|k|omega)Final"
     {
         $U;
         relTol          0;
@@ -122,19 +122,29 @@ solvers
 PIMPLE
 {
     momentumPredictor           yes;
-    nOuterCorrectors            1;
+    nOuterCorrectors            2;
     nCorrectors                 2;
     nNonOrthogonalCorrectors    0;
+
+    pMinFactor      0.01;
+    pMaxFactor      100;
+    rhoMin          1e-4;
+    rhoMax          100;
 }
 
 EM
 {
     emSolverFreq    1;
-    nMaxEMLoops     15;
+    nMaxEMLoops     50;
 }
 
 relaxationFactors
 {
+    equations
+    {
+        k       0.7;
+        omega   0.7;
+    }
 }
 
 // ************************************************************************* //
